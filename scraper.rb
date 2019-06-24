@@ -19,5 +19,11 @@ MasterviewScraper::AUTHORITIES.keys.each do |authority_label, params|
 end
 
 unless exceptions.empty?
-  raise "There were earlier errors. See output for details"
+  message = if exceptions.count == 1
+              "There was earlier 1 error."
+            else
+              "There were earlier #{exceptions.count} errors."
+            end
+  message += " See output for details"
+  raise message
 end
