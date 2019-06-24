@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 Bundler.require
 
-exceptions = []
+exceptions = {}
 MasterviewScraper::AUTHORITIES.keys.each do |authority_label, params|
   puts "\nCollecting feed data for #{authority_label}..."
 
@@ -14,16 +14,10 @@ MasterviewScraper::AUTHORITIES.keys.each do |authority_label, params|
   rescue StandardError => e
     STDERR.puts "#{authority_label}: ERROR: #{e}"
     STDERR.puts e.backtrace
-    exceptions << e
+    exceptions[authority_label] = e
   end
 end
 
 unless exceptions.empty?
-  message = if exceptions.count == 1
-              "There was earlier 1 error."
-            else
-              "There were earlier #{exceptions.count} errors."
-            end
-  message += " See output for details"
-  raise message
+  raise "There were errors with the following authorities: #{exceptions.keys}. See earlier output for details"
 end
