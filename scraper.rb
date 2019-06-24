@@ -31,5 +31,5 @@ unless exceptions.empty?
 end
 
 unless exceptions.empty?
-  puts "There were errors with the following authorities: #{exceptions.keys}. See earlier output for details"
+  raise "There were errors with the following authorities: #{exceptions.keys}. See earlier output for details"
 end
