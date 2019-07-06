@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/planningalerts-scrapers/masterview_scraper.git
-  revision: 26ad49412148beb37676b8e62d1412c7315ccb69
+  revision: 88830817d397d480c2b855e932028d036f6bc8e0
   specs:
     masterview_scraper (0.1.0)
       mechanize
@@ -23,7 +23,7 @@ GEM
     connection_pool (2.2.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    domain_name (0.5.20180417)
+    domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     hashdiff (0.4.0)
     http-cookie (1.0.3)
