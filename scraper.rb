@@ -21,8 +21,10 @@ def scrape(authorities)
   exceptions
 end
 
-puts "Scraping authorities: #{MasterviewScraper::AUTHORITIES.keys.join(', ')}"
-exceptions = scrape(MasterviewScraper::AUTHORITIES.keys)
+authorities = MasterviewScraper::AUTHORITIES.keys
+
+puts "Scraping authorities: #{authorities.join(', ')}"
+exceptions = scrape(authorities)
 unless exceptions.empty?
   puts "\n***************************************************"
   puts "Now retrying authorities which earlier had failures"
