@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/planningalerts-scrapers/masterview_scraper.git
-  revision: e5b60303e845c6e970d6744866ab78e2ab890218
+  revision: 84b181fc446ac1c35426e2256ce8c5f462ecc037
   specs:
     masterview_scraper (0.1.0)
       mechanize
@@ -43,9 +43,9 @@ GEM
     mime-types-data (3.2019.0331)
     mini_portile2 (2.4.0)
     net-http-digest_auth (1.4.1)
-    net-http-persistent (3.0.1)
+    net-http-persistent (3.1.0)
       connection_pool (~> 2.2)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     ntlm-http (0.1.1)
     public_suffix (3.1.1)
@@ -58,7 +58,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.6)
     vcr (5.0.0)
-    webmock (3.6.0)
+    webmock (3.6.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
