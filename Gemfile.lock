@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/planningalerts-scrapers/masterview_scraper.git
-  revision: 890e7e71d6ccc9e048bb17c59cfc63f06ed605ca
+  revision: 02e04cc691ff7ab05065e3205b9300bff75b54e6
   specs:
     masterview_scraper (0.1.0)
       mechanize
