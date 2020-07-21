@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << './lib'
+$LOAD_PATH << "./lib"
 
 require "rspec/core/rake_task"
 require "watir"

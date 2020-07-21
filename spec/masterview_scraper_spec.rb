@@ -37,7 +37,7 @@ RSpec.describe MasterviewScraper do
       expect(results).to eq expected
     end
 
-    MasterviewScraper::AUTHORITIES.keys.each do |authority|
+    MasterviewScraper::AUTHORITIES.each_key do |authority|
       it authority do
         test_scrape_and_save(authority)
       end

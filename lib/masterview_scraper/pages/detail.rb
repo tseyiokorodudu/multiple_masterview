@@ -24,7 +24,9 @@ module MasterviewScraper
                   page.at("#lblprop") ||
                   page.at("#lblProperties") ||
                   page.at("#lblProperties1")
-        address = address.inner_text.strip.split("\n")[0].strip.gsub("\r", " ").squeeze(" ") if address
+        if address
+          address = address.inner_text.strip.split("\n")[0].strip.gsub("\r", " ").squeeze(" ")
+        end
         details_block = page.at("#lblDetails") || page.at("#lblDetail")
         # Special handling for tables that actually have multiple columns in them.
         if details_block.at("table") && details_block.at("table").at("tr").search("td").count > 1
@@ -65,7 +67,7 @@ module MasterviewScraper
                   detail =~ /Permit:/ ||
                   detail =~ /Category:/
               # Do nothing
-            # Only seen this in bundaberg council so far
+              # Only seen this in bundaberg council so far
             elsif [
               "Reconfiguring a Lot",
               "Material Change of Use",

@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 Bundler.require
 
-$LOAD_PATH << './lib'
+$LOAD_PATH << "./lib"
+
 require "masterview_scraper"
 
 def scrape(authorities)
@@ -13,11 +16,11 @@ def scrape(authorities)
       MasterviewScraper.scrape(authority_label) do |record|
         record["authority_label"] = authority_label.to_s
         MasterviewScraper.log(record)
-        ScraperWiki.save_sqlite(["authority_label", "council_reference"], record)
+        ScraperWiki.save_sqlite(%w[authority_label council_reference], record)
       end
     rescue StandardError => e
-      STDERR.puts "#{authority_label}: ERROR: #{e}"
-      STDERR.puts e.backtrace
+      warn "#{authority_label}: ERROR: #{e}"
+      warn e.backtrace
       exceptions[authority_label] = e
     end
   end
@@ -37,5 +40,6 @@ unless exceptions.empty?
 end
 
 unless exceptions.empty?
-  raise "There were errors with the following authorities: #{exceptions.keys}. See earlier output for details"
+  raise "There were errors with the following authorities: #{exceptions.keys}. "\
+        "See earlier output for details"
 end
