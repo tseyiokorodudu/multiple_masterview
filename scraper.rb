@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 Bundler.require
 
+$LOAD_PATH << './lib'
+require "masterview_scraper"
+
 def scrape(authorities)
   exceptions = {}
   authorities.each do |authority_label|
