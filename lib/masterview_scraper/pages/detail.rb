@@ -28,6 +28,7 @@ module MasterviewScraper
           address = address.inner_text.strip.split("\n")[0].strip.gsub("\r", " ").squeeze(" ")
         end
         details_block = page.at("#lblDetails") || page.at("#lblDetail")
+        date_received = nil
         # Special handling for tables that actually have multiple columns in them.
         if details_block.at("table") && details_block.at("table").at("tr").search("td").count > 1
           descriptions = []
