@@ -151,7 +151,7 @@ module MasterviewScraper
       australian_proxy: true
     },
     lismore: {
-      url: "http://tracker.lismore.nsw.gov.au",
+      url: "https://tracker.lismore.nsw.gov.au",
       use_api: true,
       force_detail: true
     },
