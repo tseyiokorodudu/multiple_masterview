@@ -54,11 +54,6 @@ module MasterviewScraper
       state: "NSW",
       force_detail: true
     },
-    logan: {
-      url: "http://pdonline.logan.qld.gov.au/MasterViewUI/Modules/ApplicationMaster",
-      params: { "6" => "F" },
-      force_detail: true
-    },
     mackay: {
       url: "https://planning.mackay.qld.gov.au/masterview/Modules/Applicationmaster",
       params: {
