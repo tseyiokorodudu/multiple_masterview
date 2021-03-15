@@ -54,12 +54,6 @@ module MasterviewScraper
       state: "NSW",
       force_detail: true
     },
-    ipswich: {
-      url: "http://pdonline.ipswich.qld.gov.au/pdonline/modules/applicationmaster",
-      # TODO: Don't know what this parameter "5" does
-      params: { "5" => "T", "6" => "F" },
-      force_detail: true
-    },
     logan: {
       url: "http://pdonline.logan.qld.gov.au/MasterViewUI/Modules/ApplicationMaster",
       params: { "6" => "F" },
