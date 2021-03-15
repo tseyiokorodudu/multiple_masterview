@@ -164,12 +164,15 @@ module MasterviewScraper
         "Refused",
         "Refused by Delegated Officer",
         # Haha. Withdrawn by staff - what a fantastic euphimism for rejected
-        "Withdrawn by Staff"
+        "Withdrawn by Staff",
+        "Planning Consent Refused - CAP",
+        "Building Consent Refused - Delegation"
       ].freeze
 
       UNKNOWN = [
         "NO DA - Certificate Only",
-        "Change in Workflow"
+        "Change in Workflow",
+        "Application Lapsed"
       ].freeze
 
       # Get the data from the decision block as is but don't interpret it just yet
