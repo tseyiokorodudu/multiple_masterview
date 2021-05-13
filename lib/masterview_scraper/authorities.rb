@@ -63,12 +63,6 @@ module MasterviewScraper
       force_detail: true,
       timeout: 120
     },
-    marion: {
-      url: "http://development.marion.sa.gov.au/MasterViewUI",
-      use_api: true,
-      page_size: 10,
-      force_detail: true
-    },
     moreton_bay: {
       url: "http://pdonline.moretonbay.qld.gov.au/Modules/applicationmaster",
       params: {
