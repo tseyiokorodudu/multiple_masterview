@@ -104,6 +104,7 @@ module MasterviewScraper
         "Approved Under Delegation",
         "Approved by Delegation",
         "Approved by Private Certifier",
+        "Private Certifier Approved",
         "Approved by Delegated Authority",
         "Approved by Delegated Officer",
         "Approved by Council",
