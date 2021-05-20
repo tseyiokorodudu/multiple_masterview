@@ -13,8 +13,8 @@
   date_received: '2019-05-08'
 - council_reference: 10.2018.36101.2
   address: 588 Roper St, Albury 2640 NSW
-  description: Modifcation of Consent - Alterations & Additions to Residence and Swimming
-    Pool
+  description: Modification of Consent - Alterations & Additions to Residence and
+    Swimming Pool
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/010.2018.00036101.002
   date_scraped: '2019-05-14'
   date_received: '2019-04-15'
@@ -323,7 +323,7 @@
   description: Dwelling & Garage
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/011.2018.00036086.001
   date_scraped: '2019-05-14'
-  date_received: '2019-05-02'
+  date_received: '2019-04-26'
 - council_reference: 11.2018.36266.1
   address: 481 George St, Albury 2640 NSW
   description: Remove internal wall, install steel beam & raise opening over stove
@@ -372,6 +372,12 @@
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/011.2019.00036654.001
   date_scraped: '2019-05-14'
   date_received: '2019-04-30'
+- council_reference: 11.2019.36669.1
+  address: 694 Shaw St, Springdale Heights 2641 NSW
+  description: Dwelling & Attached Garage
+  info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/011.2019.00036669.001
+  date_scraped: '2019-05-14'
+  date_received: '2019-05-01'
 - council_reference: 11.2019.36683.1
   address: 3 Faithful St, Glenroy 2640 NSW
   description: Carport
@@ -824,7 +830,7 @@
   date_received: '2019-05-08'
 - council_reference: 15.2018.35970.1
   address: 11 Burt St, Glenroy 2640 NSW
-  description: Residence & Garage
+  description: Construction of Dwelling & Garage
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/015.2018.00035970.001
   date_scraped: '2019-05-14'
   date_received: '2019-05-09'
@@ -950,7 +956,7 @@
   date_scraped: '2019-05-14'
   date_received: '2019-05-02'
 - council_reference: 15.2019.29150.1
-  address: 5 Tallow Wood St, Thurgoona 2640 NSW
+  address: 5 Tallowwood St, Thurgoona 2640 NSW
   description: Ingound Swimming Pool
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/015.2019.00029150.001
   date_scraped: '2019-05-14'
@@ -985,15 +991,3 @@
   info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/017.2018.00036583.001
   date_scraped: '2019-05-14'
   date_received: '2019-05-03'
-- council_reference: 17.2019.95.1
-  address: 373 Macauley St, South Albury 2640 NSW
-  description: CC - Subdivision Work
-  info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/017.2019.00000095.001
-  date_scraped: '2019-05-14'
-  date_received: '2019-05-07'
-- council_reference: 17.2019.96.1
-  address: 75 Alpine St, Thurgoona 2640 NSW
-  description: CC - Subdivision Work
-  info_url: https://eservice.alburycity.nsw.gov.au/ApplicationTracker/Application/ApplicationDetails/017.2019.00000096.001
-  date_scraped: '2019-05-14'
-  date_received: '2019-05-07'

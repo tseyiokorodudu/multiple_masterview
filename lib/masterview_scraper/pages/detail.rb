@@ -157,7 +157,8 @@ module MasterviewScraper
         # DAs for the same property conflicting with each other.
         "Surrender Consent",
         "Cancelled/Surrendered",
-        "Cancelled"
+        "Cancelled",
+        "Cancelled/Withdrawn"
       ].freeze
 
       REJECTED = [
