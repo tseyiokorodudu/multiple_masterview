@@ -11,6 +11,7 @@ RSpec.describe MasterviewScraper do
     def test_scrape_and_save(authority)
       File.delete("./data.sqlite") if File.exist?("./data.sqlite")
 
+      # Use record: :new_episodes below if you are trying to fix a single scraper
       VCR.use_cassette(authority) do
         Timecop.freeze(Date.new(2019, 5, 14)) do
           MasterviewScraper.scrape_and_save(authority)
