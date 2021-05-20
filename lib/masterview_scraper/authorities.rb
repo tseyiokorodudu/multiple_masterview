@@ -26,11 +26,12 @@ module MasterviewScraper
       use_api: true,
       force_detail: true
     },
-    brisbane: {
-      url: "https://pdonline.brisbane.qld.gov.au/MasterViewUI/Modules/ApplicationMaster",
-      params: { "6" => "F" },
-      force_detail: true
-    },
+    # TODO: They are now redirecting to their developmenti service
+    # brisbane: {
+    #   url: "https://pdonline.brisbane.qld.gov.au/MasterViewUI/Modules/ApplicationMaster",
+    #   params: { "6" => "F" },
+    #   force_detail: true
+    # },
     fairfield: {
       url: "https://openaccess.fairfieldcity.nsw.gov.au/OpenAccess/Modules/Applicationmaster",
       params: { "4a" => 10, "6" => "F" },
