@@ -159,8 +159,7 @@ module MasterviewScraper
         "Surrender Consent",
         "Cancelled/Surrendered",
         "Cancelled",
-        "Cancelled/Withdrawn",
-        "Cancelled by Staff"
+        "Cancelled/Withdrawn"
       ].freeze
 
       REJECTED = [
@@ -170,6 +169,7 @@ module MasterviewScraper
         "Refused by Delegated Officer",
         # Haha. Withdrawn by staff - what a fantastic euphimism for rejected
         "Withdrawn by Staff",
+        "Cancelled by Staff",
         "Planning Consent Refused - CAP",
         "Building Consent Refused - Delegation"
       ].freeze
