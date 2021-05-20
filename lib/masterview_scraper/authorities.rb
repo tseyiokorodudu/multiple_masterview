@@ -34,7 +34,8 @@ module MasterviewScraper
     fairfield: {
       url: "https://openaccess.fairfieldcity.nsw.gov.au/OpenAccess/Modules/Applicationmaster",
       params: { "4a" => 10, "6" => "F" },
-      force_detail: true
+      force_detail: true,
+      state: "NSW"
     },
     fraser_coast: {
       url: "https://pdonline.frasercoast.qld.gov.au/Modules/ApplicationMaster",
