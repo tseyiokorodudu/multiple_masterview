@@ -176,7 +176,8 @@ module MasterviewScraper
       UNKNOWN = [
         "NO DA - Certificate Only",
         "Change in Workflow",
-        "Application Lapsed"
+        "Application Lapsed",
+        "Active"
       ].freeze
 
       # Get the data from the decision block as is but don't interpret it just yet
