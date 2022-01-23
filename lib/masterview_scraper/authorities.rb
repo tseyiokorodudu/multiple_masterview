@@ -132,6 +132,7 @@ module MasterviewScraper
       use_api: true,
       page_size: 10,
       force_detail: true,
+      disable_ssl_certificate_check: true,
       australian_proxy: true
     },
     camden: {
