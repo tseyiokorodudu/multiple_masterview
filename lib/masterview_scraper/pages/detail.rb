@@ -30,59 +30,61 @@ module MasterviewScraper
         details_block = page.at("#lblDetails") || page.at("#lblDetail")
         date_received = nil
         # Special handling for tables that actually have multiple columns in them.
-        if details_block.at("table") && details_block.at("table").at("tr").search("td").count > 1
-          descriptions = []
-          details_block.search("table tr").each do |tr|
-            values = tr.search("td").map(&:inner_text)
-            if values[0] == "Application No."
-              council_reference = values[1]
-            elsif values[0] == "Description"
-              descriptions << values[1]
-            elsif values[0] == "Submitted Date"
-              date_received = values[1]
-            else
-              raise "Unexpected value: #{values[0]}"
+        if details_block.nil?
+          if details_block.at("table") && details_block.at("table").at("tr").search("td").count > 1
+            descriptions = []
+            details_block.search("table tr").each do |tr|
+              values = tr.search("td").map(&:inner_text)
+              if values[0] == "Application No."
+                council_reference = values[1]
+              elsif values[0] == "Description"
+                descriptions << values[1]
+              elsif values[0] == "Submitted Date"
+                date_received = values[1]
+              else
+                raise "Unexpected value: #{values[0]}"
+              end
             end
-          end
-          description = descriptions.join(", ")
-        else
-          details = details_block.inner_html.split("<br>").map do |detail|
-            Pages::Index.strip_html(detail).strip
-          end
+            description = descriptions.join(", ")
+          else
+            details = details_block.inner_html.split("<br>").map do |detail|
+              Pages::Index.strip_html(detail).strip
+            end
 
-          descriptions = []
-          date_received = nil
-          details.each do |detail|
-            if detail =~ /^Address : (.*)/
-              address = Regexp.last_match(1)
-            elsif detail =~ /^Description: (.*)/ ||
-                  detail =~ /^Description : (.*)/ ||
-                  detail =~ /Activity:(.*)/
-              description = Regexp.last_match(1).squeeze(" ").strip
-              descriptions << description if description != ""
-            elsif detail =~ /^Submitted: (.*)/ ||
-                  detail =~ /^Date Lodged: (.*)/
-              date_received = Regexp.last_match(1)
-            elsif detail =~ /Determination Description:/ ||
-                  detail =~ /Assessment Level:/ ||
-                  detail =~ /Permit:/ ||
-                  detail =~ /Category:/
-              # Do nothing
-              # Only seen this in bundaberg council so far
-            elsif [
-              "Reconfiguring a Lot",
-              "Material Change of Use",
-              "Operational Works",
-              "Combined (MCU, RL, OW)",
-              "Change Application",
-              "Concurrence Agency Assessment"
-            ].include?(detail)
-              # Do nothing
-            else
-              raise "Unexpected detail line: #{detail}"
+            descriptions = []
+            date_received = nil
+            details.each do |detail|
+              if detail =~ /^Address : (.*)/
+                address = Regexp.last_match(1)
+              elsif detail =~ /^Description: (.*)/ ||
+                    detail =~ /^Description : (.*)/ ||
+                    detail =~ /Activity:(.*)/
+                description = Regexp.last_match(1).squeeze(" ").strip
+                descriptions << description if description != ""
+              elsif detail =~ /^Submitted: (.*)/ ||
+                    detail =~ /^Date Lodged: (.*)/
+                date_received = Regexp.last_match(1)
+              elsif detail =~ /Determination Description:/ ||
+                    detail =~ /Assessment Level:/ ||
+                    detail =~ /Permit:/ ||
+                    detail =~ /Category:/
+                # Do nothing
+                # Only seen this in bundaberg council so far
+              elsif [
+                "Reconfiguring a Lot",
+                "Material Change of Use",
+                "Operational Works",
+                "Combined (MCU, RL, OW)",
+                "Change Application",
+                "Concurrence Agency Assessment"
+              ].include?(detail)
+                # Do nothing
+              else
+                raise "Unexpected detail line: #{detail}"
+              end
             end
+            description = descriptions.first
           end
-          description = descriptions.first
         end
 
         {
@@ -111,6 +113,7 @@ module MasterviewScraper
         "Approved by Council",
         "Approved with Conditions",
         "Approved Council Certifier",
+        "APPROVED- PRIVATE CERTIFIER",
         "Modification Approved",
         "Issued",
         "Certificate Issued",
@@ -137,6 +140,7 @@ module MasterviewScraper
         "Deferred Commencement",
         "Deferred Approval",
         "Complete",
+        "Completed (COM)",
         "Conditional Consent - Council Staff",
         "Conditional Consent - Council",
         "Registration - Private Certification",
@@ -144,7 +148,8 @@ module MasterviewScraper
         "PC Approved Complying Development",
         "Privately Certified CC Approval",
         "Privately Certified Occ Cert Issued",
-        "Final Certificate Issued CCC"
+        "Final Certificate Issued CCC",
+        "Application Returned"
       ].freeze
 
       WITHDRAWN = [
